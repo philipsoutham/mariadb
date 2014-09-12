@@ -6,7 +6,8 @@ RUN \
   echo 'deb http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.0/debian wheezy main' > /etc/apt/sources.list.d/mariadb.list &&\
   apt-get update && \
   apt-get upgrade -y &&\
-  apt-get install --no-install-recommends -y mariadb-server
+  apt-get install --no-install-recommends -y mariadb-server &&\
+  apt-get clean
 
 VOLUME ["/etc/mysql", "/var/lib/mysql"]
 EXPOSE  3306/tcp
