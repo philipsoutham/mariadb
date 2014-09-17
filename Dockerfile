@@ -9,7 +9,7 @@ RUN \
   apt-get install --no-install-recommends -y mariadb-server &&\
   apt-get clean
 
-VOLUME ["/etc/mysql", "/var/lib/mysql", "/var/run/mysqld/mysqld.sock"]
+VOLUME ["/etc/mysql", "/var/lib/mysql", "/var/run/mysqld"]
 EXPOSE  3306/tcp
 
 CMD ["/usr/bin/mysqld_safe"]
