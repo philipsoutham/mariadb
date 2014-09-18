@@ -13,5 +13,4 @@ RUN \
 VOLUME ["/etc/mysql", "/var/lib/mysql", "/var/run/mysqld"]
 EXPOSE  3306/tcp
 
-USER mysql
-CMD ["/usr/sbin/mysqld", "--basedir=/usr", "--plugin-dir=/usr/lib/mysql/plugin", "--user=mysql", "--pid-file=/var/run/mysqld/mysqld.pid", "--socket=/var/run/mysqld/mysqld.sock", "--port=3306"]
+CMD ["/usr/bin/mysqld_safe"]
