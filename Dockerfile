@@ -7,7 +7,8 @@ RUN \
   apt-get update && \
   apt-get upgrade -y &&\
   apt-get install --no-install-recommends -y mariadb-server &&\
-  apt-get clean
+  apt-get clean &&\
+  sed --in-place 's/trap/#trap/g' /usr/bin/mysqld_safe
 
 VOLUME ["/etc/mysql", "/var/lib/mysql", "/var/run/mysqld"]
 EXPOSE  3306/tcp
