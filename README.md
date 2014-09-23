@@ -22,5 +22,5 @@ docker run --name=mariadb --rm -it -v /mnt/mysql/data:/var/lib/mysql -v /mnt/mys
 ## Shut it down
 
 ```shell
-docker run --link=mariadb:db --rm -it --name mysql_client psoutham/mariadb /bin/sh -c 'mysql -u admin_user -p -h $DB_PORT_3306_TCP_ADDR -P $DB_PORT_3306_TCP_PORT'
+docker run --volumes-from=mariadb:ro --rm -it --name mysqladmin_client psoutham/mariadb /bin/sh -c 'mysqladmin -u admin_user -p shutdown'
 ```
