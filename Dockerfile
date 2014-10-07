@@ -6,7 +6,7 @@ RUN \
   echo 'deb http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.0/debian wheezy main' > /etc/apt/sources.list.d/mariadb.list &&\
   apt-get update && \
   apt-get upgrade -y &&\
-  apt-get install --no-install-recommends -y mariadb-server=10.0.13+maria-1~wheezy &&\
+  apt-get install --no-install-recommends -y mariadb-server &&\
   apt-get clean &&\
   sed --in-place 's/trap/#trap/g' /usr/bin/mysqld_safe
 
